@@ -49,6 +49,7 @@ public class Bank
 		   accounts[account] = accounts[account] + accounts[account]* interests;
 		   getTotalBalance();
 		   notifyAll();
+		  
 	   }
    // added waiting time when no cash
    public synchronized void odsetki3(int account, double interests, double amount)

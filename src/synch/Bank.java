@@ -53,7 +53,7 @@ public class Bank
    }
 
    
-   public synchronized void odsetki2(int account, double interests, double amount)
+   public  void odsetki2(int account, double interests, double amount)
 		   throws InterruptedException
 		   {  bankLock.lock(); //usage of banklock as in transfer
    try{
@@ -71,7 +71,7 @@ public class Bank
    }
 
    //added only waiting time 
-   public synchronized void odsetki3(int account, double interests, double amount)
+   public  void odsetki3(int account, double interests, double amount)
 		   throws InterruptedException
 		   {  bankLock.lock(); //usage of banklock as in transfer
    try{
@@ -120,7 +120,7 @@ public class Bank
    }
    
      // added interests
- public synchronized void AddInterestRates(int accountNumber,double Rate ) {
+ public  void AddInterestRates(int accountNumber,double Rate ) {
 	 bankLock.lock();
 	 try
 	 {

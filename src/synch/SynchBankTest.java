@@ -28,7 +28,7 @@ public class SynchBankTest {
             	  bank.AddInterestRates(fromAccount, 3);
             	  
                
-                  Thread.sleep((int) (DELAY * Math.random()));
+                  Thread.sleep(30);
                }
             }
             catch (InterruptedException e)

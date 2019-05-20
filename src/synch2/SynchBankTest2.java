@@ -13,7 +13,7 @@ public class SynchBankTest2
    public static final double MAX_AMOUNT = 1000;
    public static final int DELAY = 10;
 
-   public static void main(String[] args)
+   public static void main(String[] args) throws InterruptedException
    {
       Bank bank = new Bank(NACCOUNTS, INITIAL_BALANCE);
       for (int i = 0; i < NACCOUNTS; i++)
@@ -23,15 +23,13 @@ public class SynchBankTest2
             try
             {
                while (true)
-               {
-                 // int toAccount = (int) (bank.size() * Math.random());
-                //  double amount = MAX_AMOUNT * Math.random();
-                //  bank.transfer(fromAccount, toAccount, amount);
+               { 
+                
             	   
             	   bank.odsetki2(fromAccount, 0.02,Math.random()); // Added additional interests
             	   bank.odsetki3(10, 0.03, 1); //add interests for acc nr 10
-            	   bank.AddInterestRates(fromAccount, 3);
-            	   Thread.sleep((int) (DELAY * Math.random()));
+            	   bank.AddInterestRates(fromAccount, 0.03);
+            	   Thread.sleep((int) (DELAY * Math.random()+500)); //increased sleeping time
                }
             }
             catch (InterruptedException e)
@@ -40,6 +38,9 @@ public class SynchBankTest2
          };
          Thread t = new Thread(r);
          t.start();
+        // t.join(); // awaits for thread finish
+         
+         
       }
    }
 }
